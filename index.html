@@ -1,17 +1,41 @@
-<script>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pre&Cultura Shorteen URL</title>
+    <meta charset="UTF-8" />
+    <script>
+let resultado = "redirigiendo...";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const newpage= urlParams.get('redirect');
-console.log(newpage);
-let destino ="";
-switch(newpage.toString()){
-case "slide1": destino="https://docs.google.com/presentation/d/e/2PACX-1vTdo7ByHAp-NDLoXEf4XEXu91yjIMaXsRKkPaiBsZa__VYzghgeUE49vW11BPYqV5E9BHSEy08vqxD5/pub";
-break;
-default: destino=""; console.log(newpage + " no econtrado");
+const newpage = urlParams.get("redirect");
+let destino = "";
+
+switch (newpage) {
+  case "slide1":
+    destino =
+      "https://docs.google.com/presentation/d/e/2PACX-1vTdo7ByHAp-NDLoXEf4XEXu91yjIMaXsRKkPaiBsZa__VYzghgeUE49vW11BPYqV5E9BHSEy08vqxD5/pub";
+    break;
+  default:
+    console.log(newpage + " no econtrado");
+    break;
 }
 
-if(destino!=""){
-location.replace(destino);
+if (destino !== "") {
+  window.location.replace(destino);
+}
+
+document.getElementById("app").innerHTML =
+  `
+<h1>` +
+  resultado +
+  `</h1>
+`;
 }
 </script>
-<h3>Redirigiendo...</h3>
+  </head>
+
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
