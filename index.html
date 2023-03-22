@@ -1,0 +1,16 @@
+<script>
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const newpage= urlParams.get('redirect')
+let destino ="";
+switch(newpage){
+case "slide1": destino="https://docs.google.com/presentation/d/e/2PACX-1vTdo7ByHAp-NDLoXEf4XEXu91yjIMaXsRKkPaiBsZa__VYzghgeUE49vW11BPYqV5E9BHSEy08vqxD5/pub";
+break;
+default: destino=""; console.log(newpage + " no econtrado"); window.close();
+}
+
+if(destino!=""){
+location.replace(destino);
+}
+</script>
+<h3>Redirigiendo...</h3>
